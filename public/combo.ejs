@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar IPV4</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Selecione o endereço IPV4 da interface de rede principal</p>
+    <select id="comboBox">
+        <% addresses.forEach((address)=> { %>
+            <option value="<%= address %>">
+                <%= address %>
+            </option>
+            <% }); %>
+    </select>
+
+    <button id="btnConfirmar">Confirmar</button>
+</body>
+
+</html>
+
+<script>
+    const { ipcRenderer } = require('electron');
+
+    document.getElementById('btnConfirmar').addEventListener('click', () => {
+        const comboBox = document.getElementById('comboBox');
+        const selectedOption = comboBox.value;
+
+        // Envia a opção selecionada de volta ao código principal
+        ipcRenderer.send('address', selectedOption);
+    });
+</script>

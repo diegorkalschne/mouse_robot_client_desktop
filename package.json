@@ -1,0 +1,24 @@
+{
+  "name": "mouse_robot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rebuild-robotjs": "electron-rebuild -f -w robotjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ejs-electron": "^3.0.0",
+    "electron": "^27.0.3",
+    "qrcode": "^1.5.4",
+    "robotjs": "^0.6.0",
+    "socket.io": "^4.8.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^3.7.0",
+    "electron-packager": "^17.1.2"
+  }
+}

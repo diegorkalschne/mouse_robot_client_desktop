@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectar Aplicativo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Escaneie o QRCode abaixo utilizando o aplicativo Mouse Robot</p>
+    <canvas id="canvas"></canvas>
+    <span id="text"></span>
+</body>
+
+</html>
+
+<script>
+    const qrcode = require('qrcode');
+
+    const canvas = document.getElementById('canvas');
+    const spanText = document.getElementById('text');
+
+    const qrcodeText = `<%= qrText %>`;
+    spanText.innerHTML = qrcodeText;
+
+    qrcode.toCanvas(canvas, qrcodeText, { width: 250 }, (err) => {
+        if (err) console.error(err);
+    })
+</script>
