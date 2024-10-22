@@ -4,7 +4,7 @@ Cliente desktop para ser utilizado em conjunto com o aplicativo [Mouse Robot](ht
 ## Debug
 1. `git clone`
 2. `npm i`
-3. `./node_modules/.bin/electron-builder.cmd` para buildar corretamente os módulos nativos do `robotjs`
+3. `./node_modules/.bin/electron-rebuild.cmd` para buildar corretamente os módulos nativos do `robotjs`
 4. `npx electron .`
 
 ## Criar executável (.exe)
